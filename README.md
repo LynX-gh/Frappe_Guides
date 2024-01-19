@@ -12,6 +12,7 @@ A complete Guide to Install Frappe Bench in Windows 11 Using WSL2 and install Fr
 - VS Code
 
 ### STEP 1 Check WSL version and connect to Ubuntu
+
 	wsl --version
 	wsl -d Ubuntu
 
@@ -29,7 +30,6 @@ A complete Guide to Install Frappe Bench in Windows 11 Using WSL2 and install Fr
  	sudo apt-get update
 	sudo apt-get install mariadb-server
  	sudo apt-get install mariadb-client
-
 
 ### STEP 5
 
@@ -55,7 +55,44 @@ And add this configuration
 
 Now, just restart the mysql service and you are good to go.
 
-	service mysql restart
+	sudo service mysql restart
+
+### STEP 7 Install Node
+
+	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+After nvm is installed, you may have to close your terminal and open another one. Now run the following command to install node.
+
+	nvm install 16 --lts
+
+Finally, install yarn using npm
+
+	npm install -g yarn
+
+### STEP 8 Install wkhtmltopdf
+
+	sudo apt-get install xvfb libfontconfig wkhtmltopdf
+
+### STEP 9 Install Bench CLI
+
+	pip3 install frappe-bench
+
+Confirm the bench installation by checking version
+
+	bench --version
+	
+	# output
+	5.2.1
+ 
+Create your first bench folder.
+
+	cd ~
+	bench init frappe-bench
+
+After the frappe-bench folder is created, change your directory to it and run this command
+
+	cd frappe-bench/
+ 	bench start
 
 ### STEP 3
 
