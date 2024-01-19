@@ -31,13 +31,9 @@ A complete Guide to Install Frappe Bench in Windows 11 Using WSL2 and install Fr
 	sudo apt-get install mariadb-server
  	sudo apt-get install mariadb-client
 
-### STEP 5
-
 During this installation you'll be prompted to set the MySQL root password. If you are not prompted, you'll have to initialize the MySQL server setup yourself and change the root password. You can do that by running the command:
-    
-	sudo mysql_secure_installation
 
-### STEP 6
+	sudo mysql_secure_installation
 
 Now, edit the MariaDB configuration file.
 
@@ -57,7 +53,7 @@ Now, just restart the mysql service and you are good to go.
 
 	sudo service mysql restart
 
-### STEP 7 Install Node
+### STEP 5 Install Node
 
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
@@ -69,11 +65,11 @@ Finally, install yarn using npm
 
 	npm install -g yarn
 
-### STEP 8 Install wkhtmltopdf
+### STEP 6 Install wkhtmltopdf
 
 	sudo apt-get install xvfb libfontconfig wkhtmltopdf
 
-### STEP 9 Install Bench CLI
+### STEP 7 Install Bench CLI
 
 	pip3 install frappe-bench
 
