@@ -7,19 +7,55 @@ A complete Guide to Install Frappe Bench in Windows 11 Using WSL2 and install Fr
 
 ### Pre-requisites 
 
-<ol>
-	<li> [WSL 2.0 or greater enabled](https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command) </li>
-	<li>Wnidows 11 </li>
-	<li>VS Code</li>
-</ol>
+- [WSL 2.0 or greater enabled](https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command)
+- Windows 11
+- VS Code
 
-### STEP 1 Check WSL version
-    wsl --version
+### STEP 1 Check WSL version and connect to Ubuntu
+	wsl --version
+	wsl -d Ubuntu
 
-### STEP 2  Clone frappe_docker and move to frappe_docker folder
+### STEP 2  Update Ubuntu
 
-    git clone https://github.com/frappe/frappe_docker.git
-    cd frappe_docker
+	sudo apt update -y && sudo apt upgrade -y
+
+### STEP 3  Install git, python, and redis
+
+	sudo apt install git python3 python3-pip python3-venv redis-server
+
+### STEP 4  Install MariaDB
+
+	sudo apt install software-properties-common
+ 	sudo apt-get update
+	sudo apt-get install mariadb-server
+ 	sudo apt-get install mariadb-client
+
+
+### STEP 5
+
+During this installation you'll be prompted to set the MySQL root password. If you are not prompted, you'll have to initialize the MySQL server setup yourself and change the root password. You can do that by running the command:
+    
+	sudo mysql_secure_installation
+
+### STEP 6
+
+Now, edit the MariaDB configuration file.
+
+	sudo nano /etc/mysql/my.cnf
+
+And add this configuration
+
+	[mysqld]
+	character-set-client-handshake = FALSE
+	character-set-server = utf8mb4
+	collation-server = utf8mb4_unicode_ci
+	
+	[mysql]
+	default-character-set = utf8mb4
+
+Now, just restart the mysql service and you are good to go.
+
+	service mysql restart
 
 ### STEP 3
 
