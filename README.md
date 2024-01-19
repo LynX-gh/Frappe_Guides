@@ -1,20 +1,20 @@
 # Guide-to-Install-Frappe-ERPNext-in-Windows-11-Using-WSL2
 Guide-to-Install-Frappe-ERPNext-in-Windows-11-Using-WSL2
 
-# Guide-to-Install-Frappe-ERPNext-in-Windows-11-Using-Docker
+# Guide-to-Install-Frappe-ERPNext-in-Windows-11-Using-WSL2
 
-A complete Guide to Install Frappe Bench in Windows 11 Using Docker and install Frappe/ERPNext Application
+A complete Guide to Install Frappe Bench in Windows 11 Using WSL2 and install Frappe/ERPNext Application
 
 ### Pre-requisites 
 
-      WSL 2.0 or greater
-      Wnidows 11 
-      VS Code
-    
+<ol>
+	<li> [WSL 2.0 or greater enabled](https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command) </li>
+	<li>Wnidows 11 </li>
+	<li>VS Code</li>
+</ol>
 
-### STEP 1 Check Docker version
-    docker version
-    git version
+### STEP 1 Check WSL version
+    wsl --version
 
 ### STEP 2  Clone frappe_docker and move to frappe_docker folder
 
