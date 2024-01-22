@@ -83,91 +83,32 @@ Confirm the bench installation by checking version
 Create your first bench folder.
 
 	cd ~
-	bench init frappe-bench
+	bench init --frappe-branch version-14 frappe-bench
 
 After the frappe-bench folder is created, change your directory to it and run this command
 
 	cd frappe-bench/
  	bench start
 
-### STEP 3
-
-   Copy example devcontainer config from 
-    
-    devcontainer-example folder to .devcontainer folder
-    
-   Copy example vscode config for devcontainer from 
-    
-    development/vscode-example folder to development/.vscode folder
-   
-### STEP 4 Install VSCode Remote Containers extension
-    
-    Open vscode and install 'Dev Containers' extension
-    
-###  STEP 5 After the extensions are installed, you can
-
-  Open frappe_docker folder in VS Code.
-  
-  Launch the command, from Command Palette (Ctrl + Shift + P) Remote-Containers: Reopen in Container. You can also click in the bottom left corner to access the remote   container menu.
-  
-### Note: 
-   if this error in running contaners try the below commnad in CMD
-   
-   Error starting userland proxy: listen tcp 0.0.0.0:80: bind: An attempt was made to access a socket in a way forbidden by its access permissions
-	
-    netsh http add iplisten ipaddress=::
-                
-   The development directory is ignored by git. It is mounted and available inside the container. Create all your benches (installations of bench, the tool that          manages frappe) inside this directory.
-   Node v14 and v10 are installed. Check with nvm ls. Node v14 is used by default.
-                
-    
-### STEP 6 Initilase frappe bench with frappe version 14 and Switch directory
-
-    
-    bench init --skip-redis-config-generation --frappe-branch version-14 frappe-bench
-    cd frappe-bench
-    
-    
-### STEP 7 Setup hosts
-    
-   We need to tell bench to use the right containers instead of localhost. Run the following commands inside the container:
-
-    bench set-config -g db_host mariadb
-    bench set-config -g redis_cache redis://redis-cache:6379
-    bench set-config -g redis_queue redis://redis-queue:6379
-    bench set-config -g redis_socketio redis://redis-socketio:6379
-  For any reason the above commands fail, set the values in common_site_config.json manually.
-
-    {
-      "db_host": "mariadb",
-      "redis_cache": "redis://redis-cache:6379",
-      "redis_queue": "redis://redis-queue:6379",
-      "redis_socketio": "redis://redis-socketio:6379"
-    }
-    
 ### STEP 8 Create a new site
-   sitename MUST end with .localhost for trying deployments locally.
-   MariaDB root password: 123
+
+Sitename MUST end with .localhost for trying deployments locally
+MariaDB root password will be what you set in Step 4
     
-    bench new-site d-code.localhost --no-mariadb-socket 
-    
-    
+	bench new-site dev.localhost
+   
 ### STEP 9 Set bench developer mode on the new site
-    
-    bench --site d-code.localhost set-config developer_mode 1
-    bench --site d-code.localhost clear-cache   
-    
+
+	bench --site dev.localhost set-config developer_mode 1
+	bench --site dev.localhost clear-cache   
     
 ### STEP 10 Install ERPNext
-    
-    bench get-app --branch version-14 --resolve-deps erpnext
-    bench --site d-code.localhost install-app erpnext
-    
-    
-    
-    
-### STEP 11 Start Frappe bench 
-    
-    bench start
-    
-  You can now login with user Administrator and the password you choose when creating the site. Your website will now be accessible at location d-code.localhost:8000
+
+	bench get-app --branch version-14 --resolve-deps erpnext
+	bench --site dev.localhost install-app erpnext
+ 
+### STEP 11 Start Frappe bench
+
+	bench start
+
+##### You can now login with user Administrator and the password you choose when creating the site. Your website will now be accessible at location d-code.localhost:8000
