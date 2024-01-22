@@ -6,7 +6,7 @@ A complete Guide to Install Frappe Bench in Windows 11 Using WSL2 and install Fr
 
 - Windows 11 21H2 / Windows 10 1903 with Hyper-V Enabled
 - [WSL 2.0 or greater enabled](https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command)
-- Ubuntu Distro Installed in WSL
+- [Ubuntu Distro Installed in WSL](https://learn.microsoft.com/en-us/windows/wsl/install#change-the-default-linux-distribution-installed)
 
 ### STEP 1 Check WSL version and connect to Ubuntu
 
