@@ -105,4 +105,6 @@ MariaDB root password will be what you set in Step 4
 
 	bench start
 
-##### You can now login with user Administrator and the password you choose when creating the site. Your website will now be accessible at location dev.localhost:8000
+##### You can now login with user Administrator and the password you choose when creating the site. Your website will now be accessible at location
+	
+ 	dev.localhost:8000
