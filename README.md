@@ -50,7 +50,7 @@ Now, just restart the mysql service and you are good to go.
 
 	sudo service mysql restart
 
-### STEP 5 Install Node
+### STEP 5 Install Node.js
 
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
