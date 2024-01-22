@@ -73,9 +73,6 @@ Finally, install yarn using npm
 Confirm the bench installation by checking version
 
 	bench --version
-	
-	# output
-	5.2.1
  
 Create your first bench folder.
 
