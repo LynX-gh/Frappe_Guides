@@ -1,7 +1,4 @@
 # Guide-to-Install-Frappe-ERPNext-in-Windows-11-Using-WSL2
-Guide-to-Install-Frappe-ERPNext-in-Windows-11-Using-WSL2
-
-# Guide-to-Install-Frappe-ERPNext-in-Windows-11-Using-WSL2
 
 A complete Guide to Install Frappe Bench in Windows 11 Using WSL2 and install Frappe/ERPNext Application
 
